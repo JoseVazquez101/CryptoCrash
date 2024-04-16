@@ -15,6 +15,7 @@
 
 ~~~bash
 cd files
+chmod +x CryptoCrash.sh
 ./CryptoCrash.sh --host <ip> --port <port> --attack log
 ./CryptoCrash.sh --host <ip> --port <port> --attack rand
 ~~~
