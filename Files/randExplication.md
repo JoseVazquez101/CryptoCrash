@@ -29,3 +29,7 @@ Usando la llave secreta encontrada, se configura un cifrado AES con el vector de
 
 Ejecución y Salida:
 El script ejecuta todos estos pasos automáticamente y muestra una barra de progreso para cada etapa significativa del proceso. Al final, si todo es correcto, se mostrará el mensaje descifrado (la "flag" alojada en mi servidor).
+***
+#### Códigos:
+https://github.com/JoseVazquez101/CryptoCrash/blob/main/Files/randBreaker_v1.py
+https://github.com/JoseVazquez101/CryptoCrash/blob/main/Files/randBreaker_v2.py
