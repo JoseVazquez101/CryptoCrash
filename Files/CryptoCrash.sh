@@ -15,7 +15,6 @@ attack="log" # log o rand
 # Función para imprimir el banner
 function printBanner() {
     cat >banner.py <<EOL
-
 import sys
 import random
 
@@ -120,7 +119,7 @@ echo -ne "${blue}[+]${normal} ${dark_yellow}Generando script de Python para el d
 
 if [[ "$attack" == "log" ]]; then
     # LogAttack Python payload
-    cat > "$py_file" << 'EOL'
+    py_load=$(cat << EOL
 
 from Crypto.Cipher import AES
 from Crypto.Util import number
@@ -170,76 +169,13 @@ pwn.sleep(1) # Simulación de descifrado
 progress.success("Bandera descifrada")
 
 print(f"Bandera: {flag.decode()}")
+
 EOL
+)
 
 elif [[ "$attack" == "rand" ]]; then
     # RandAttack Python payload
-    cat > "$py_file" << 'EOL'
-
-#!/bin/bash
-
-function ctrl_c() {
-  echo -e "${red}\n\n[!] Saliendo...\n${normal}"
-  rm $py_file 2>/dev/null
-  rm out.txt 2>/dev/null
-  exit 1
-}
-# Ctrl+c
-trap ctrl_c INT
-
-blue='\033[1;34m'
-green='\033[1;32m'
-dark_yellow='\033[1;38;5;214m'
-red='\033[1;31m'
-normal='\033[0m'
-
-py_file="ranBreaker.py"
-target="socket.cryptohack.org"
-port="13379"
-
-echo -ne "${blue}[+]${normal} ${dark_yellow}Estableciendo conexión a${normal} ${blue}${target}:${port}${normal}\n"
-echo
-tempfile=$(mktemp)
-{
-  echo -ne '{"supported": ["DH64"]}\n';
-  sleep 2;
-  echo -ne '{"chosen": "DH64"}\n';
-  sleep 2;
-} | nc $target $port>$tempfile &
-nc_pid=$!
-received_data=false
-wait $nc_pid
-
-> out.txt
-
-while read -r line; do
-  echo "$line" | tee -a out.txt
-  if [[ "$line" == *'"encrypted_flag"'* ]]; then
-    received_data=true
-    break
-  fi
-done <$tempfile
-
-rm $tempfile
-
-if $received_data; then
-  echo -ne "\n${blue}[+]${normal} ${dark_yellow}Comunicación terminada${normal}\n" | tee -a out.txt
-else
-  echo "${red}[!] No se recibieron datos${normal}\n"
-  exit 1
-fi
-
-#Valores
-
-A=$(cat out.txt | grep -o '"A": "0x[^"]*' | cut -d'"' -f4)
-iv=$(cat out.txt | grep -o '"iv": "[^"]*' | awk -F ': ' '{print $2}' | tr -d '"')
-encrypted_flag=$(cat out.txt | grep -o '"encrypted_flag": "[^"]*' | awk -F ': ' '{print $2}' | tr -d '"')
-B=$(cat out.txt | grep -o '"B": "0x[^"]*' | cut -d'"' -f4)
-p=$(cat out.txt | grep -o '"p": "0x[^"]*' | cut -d'"' -f4)
-
-############### PyLoad #############################
-
-py_load=$(cat << EOL
+    py_load=$(cat << EOL
 
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
@@ -360,14 +296,10 @@ formatimes = "{:.2f}".format(timex_sec)
 
 print(f"\n\t--> {formatimes} en segundos.")
 
-EOL
-
-echo "$py_load" > "$py_file"
-python3 "$py_file"
-rm "$py_file"
-rm out.txt
 
 EOL
+)
+
 fi
 
 python3 "$py_file"
