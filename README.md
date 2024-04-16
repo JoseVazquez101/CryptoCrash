@@ -10,7 +10,7 @@
 ❯ pip install -r requeriments.txt
 ~~~
 
-#### Uso:
+### Uso:
 - Para utilizar el script, es necesario tener permisos de ejecución y se puede invocar con diferentes parámetros para especificar el host, puerto y tipo de ataque:
 
 ~~~bash
@@ -20,7 +20,7 @@
 
 
 ***
-##### Testeo de algoritmos por separado:
+#### Testeo de algoritmos por separado:
 
 Caso 1: [DiscreteLog Attack](https://github.com/JoseVazquez101/CryptoCrash/blob/main/Files/DiscreteLog_attack.py)
   - [Explication code](https://github.com/JoseVazquez101/CryptoCrash/blob/main/Files/Explication_Log.md)
