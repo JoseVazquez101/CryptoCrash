@@ -22,3 +22,6 @@ Durante todo el proceso, el script de Bash imprime mensajes informativos detalla
 Al final, ambos scripts aseguran la eliminación de archivos temporales y el script de Python generado, manteniendo limpio el entorno de trabajo.
 
 Este flujo de trabajo automatizado permite una interacción eficiente y segura con el servidor, manteniendo al usuario informado en cada paso del proceso a través de mensajes detallados y barras de progreso, lo cual es especialmente útil para presentaciones o para usuarios que deseen entender mejor el proceso de comunicación y descifrado.
+
+
+- Aquí tenemos el [código](https://github.com/JoseVazquez101/CryptoCrash/blob/main/Files/DiscreteLog_attack.py) por si se desea consultar directamente
