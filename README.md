@@ -14,6 +14,7 @@
 - Para utilizar el script, es necesario tener permisos de ejecución y se puede invocar con diferentes parámetros para especificar el host, puerto y tipo de ataque:
 
 ~~~bash
+cd files
 ./CryptoCrash.sh --host <ip> --port <port> --attack log
 ./CryptoCrash.sh --host <ip> --port <port> --attack rand
 ~~~
