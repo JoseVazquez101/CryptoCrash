@@ -20,6 +20,7 @@ chmod +x CryptoCrash.sh
 ./CryptoCrash.sh --host <ip> --port <port> --attack rand
 ~~~
 
+![image](https://github.com/JoseVazquez101/CryptoCrash/assets/111292579/64ec22c0-acad-4296-9ee5-81b38178a0f2)
 
 ***
 #### Testeo de algoritmos por separado:
