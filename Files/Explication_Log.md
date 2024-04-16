@@ -1,4 +1,4 @@
-# Explicación
+# Explicación Primer Algoritmo
 
 El código proporcionado es un script de Bash que, a su vez, genera y ejecuta un script de Python para comunicarse con un servidor, recibir datos cifrados, y luego descifrar esos datos para obtener una bandera (flag). Este proceso se realiza en varias etapas, detalladas a continuación, y el script de Bash se ha mejorado para ofrecer una trazabilidad detallada de cada paso del proceso:
 
