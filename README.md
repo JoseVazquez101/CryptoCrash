@@ -31,3 +31,6 @@ Caso 1: [DiscreteLog Attack](https://github.com/JoseVazquez101/CryptoCrash/blob/
 Caso 2: Random Colitions Attack -----> [V1](https://github.com/JoseVazquez101/CryptoCrash/blob/main/Files/randBreaker_v1.py) & [V2](https://github.com/JoseVazquez101/CryptoCrash/blob/main/Files/randBreaker_v2.py)
   - [Explication code](https://github.com/JoseVazquez101/CryptoCrash/blob/main/Files/randExplication.md)
 ***
+
+Investigación técnica: 
+https://github.com/JoseVazquez101/CryptoCrash/blob/main/Investigaci%C3%B3n%20Tecnica.docx
