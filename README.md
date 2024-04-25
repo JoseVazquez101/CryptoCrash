@@ -33,4 +33,4 @@ Caso 2: Random Colitions Attack -----> [V1](https://github.com/JoseVazquez101/Cr
 ***
 
 Investigación técnica: 
-https://github.com/JoseVazquez101/CryptoCrash/blob/main/Investigaci%C3%B3n%20Tecnica.docx
+https://github.com/JoseVazquez101/CryptoCrash/blob/main/Investigaci%C3%B3n%20Tecnica.pdf
