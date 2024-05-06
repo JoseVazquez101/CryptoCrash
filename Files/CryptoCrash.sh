@@ -137,8 +137,8 @@ echo -ne "${blue}[+]${normal} ${dark_yellow}Generando script de Python para el d
 if [[ "$attack" == "log" ]]; then
     py_file="LogJam.py"
     cat > "$py_file" <<EOL
-from Crypto.Cipher import AES
-from Crypto.Util import number
+from Cryptodome.Cipher import AES
+from Cryptodome.Util import number
 import hashlib
 from sympy.ntheory import discrete_log
 import pwn
@@ -194,8 +194,8 @@ EOL
 elif [[ "$attack" == "rand" ]]; then
     py_file="ranBreaker.py"
     cat > "$py_file" <<EOL
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
+from Cryptodome.Cipher import AES
+from Cryptodome.Util.Padding import pad, unpad
 import hashlib
 import math
 import time
